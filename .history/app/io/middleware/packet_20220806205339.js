@@ -5,9 +5,9 @@ module.exports = app => {
     // const event = ctx.packet[0];
     const oClientMessage = ctx.packet[1];
 
-    // const { userType } = oClientMessage;
+    const { userType } = oClientMessage;
 
-    // console.log('userType', userType);
+    console.log('userType', userType);
 
     ctx.socket.emit('onSendCollecterMessage', oClientMessage.data);
 
