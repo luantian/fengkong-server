@@ -2,10 +2,10 @@
 module.exports = app => {
   console.log('connection', app);
   return async (ctx, next) => {
-    ctx.socket.emit('onSendServerMessage', 'connected!');
+    ctx.socket.emit('message', 'connected!');
     await next();
     // execute when disconnect.
-    console.log('onSendServerMessage_disconnection!');
+    console.log('message_disconnection!');
   };
 };
 

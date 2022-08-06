@@ -15,7 +15,10 @@ module.exports = app => {
         oClientMessage.data.message = '经过服务器处理，数据库查询后，返回对应数据，目前为测试假数据';
         console.log('管理端: 使用onSendClientMessage事件', oClientMessage.data);
         ctx.socket.emit('onSendManagerMessage', oClientMessage.data);
-        // ctx.socket.emit('onSendViewerMessage', oClientMessage.data);
+        ctx.socket.emit('onSendViewerMessage', oClientMessage.data);
+        break;
+      // 查看端
+      case 'viewer':
         break;
       // 采集端
       case 'collecter':
